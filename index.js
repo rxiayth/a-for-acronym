@@ -4,14 +4,14 @@ var bodyParser = require("body-parser");
 var fs = require('fs');
 
 const ACRONYMS = require('./acronyms');
-const KEYS = require('./config');
+// const KEYS = require('./config');
 var app = express();
 const PORT = process.env.PORT || 4390;
 
 
 // Move those elsewhere!!
-var clientId = KEYS.clientID;
-var clientSecret = KEYS.clientSecret;
+// var clientId = KEYS.clientID;
+// var clientSecret = KEYS.clientSecret;
 
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -41,7 +41,7 @@ app.get('/oauth', function(req, res) {
         // We'll do a GET call to Slack's `oauth.access` endpoint, passing our app's client ID, client secret, and the code we just got as query parameters.
         request({
             url: 'https://slack.com/api/oauth.access', //URL to hit
-            qs: {code: req.query.code, client_id: clientId, client_secret: clientSecret}, //Query string data
+            qs: {code: req.query.code, client_id: CLIENT_ID, client_secret: CLIENT_SECRET}, //Query string data
             method: 'GET', //Specify the method
 
         }, function (error, response, body) {

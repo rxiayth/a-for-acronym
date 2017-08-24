@@ -1,6 +1,9 @@
 {
   "requires": true,
   "lockfileVersion": 1,
+  "scripts": {
+    "start": "node index.js"
+  },
   "dependencies": {
     "accepts": {
       "integrity": "sha1-hiRnWMfdbSGmR0/whKR0DsBesh8=",

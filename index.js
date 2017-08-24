@@ -6,7 +6,7 @@ var fs = require('fs');
 const ACRONYMS = require('./acronyms');
 const KEYS = require('./config');
 var app = express();
-const PORT=4390;
+const PORT = process.env.PORT || 4390;
 
 
 // Move those elsewhere!!
@@ -19,6 +19,7 @@ app.use(bodyParser.json());
 
 // Lets start our server
 app.listen(PORT, function () {
+// app.listen( function () {
     console.log("App listening on port " + PORT);
     console.log(ACRONYMS["DTM"]);
 });
